@@ -5,7 +5,7 @@ const SignIn=()=>{
 
     const logGoogleUser=async()=>{
         const {user} = await signINwithGooglePopup();
-        createUserDocumentFromAuth(user)
+       const userDocRef=await  createUserDocumentFromAuth(user)
     }
 
     return (
