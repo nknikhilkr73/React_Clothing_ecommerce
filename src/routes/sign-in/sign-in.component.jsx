@@ -1,19 +1,28 @@
+// import { useContext } from "react";
+// import { UserContext } from "../../components/context/user.context";
 import { signINwithGooglePopup } from "../../utils/firebase/firebase.utils";
 
-import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 const SignIn=()=>{
-
+    // const {setcurrentUser}=useContext(UserContext);
     const logGoogleUser=async()=>{
-        const {user} = await signINwithGooglePopup();
-       const userDocRef=await  createUserDocumentFromAuth(user)
+        try{
+        await signINwithGooglePopup();
+        // setcurrentUser(user)
+        }catch(err){
+            alert("An error occured, Please try again")
+        }
+    //    console.log("userDocRef",userDocRef);
     }
+
+  
 
     return (
         <div>
-            <h1> Sign IN Page </h1>
-            <button onClick={logGoogleUser}>
-                Sign Ini with Google Popup
+            <h1> Sign In With Google </h1>
+            <button className="google-sign-in" onClick={logGoogleUser}>
+                Sign In
             </button>
+            
         </div>
     )
 }
