@@ -10,6 +10,19 @@
     top: 90px;
     right: 40px;
     z-index: 5;
+    
+
+    button{
+        height: 3rem;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: whitesmoke;
+    }
+    button:hover{
+        background-color: whitesmoke;
+        color: black;
+    }
   
     .empty-message {
       font-size: 18px;
@@ -20,7 +33,7 @@
       height: 240px;
       display: flex;
       flex-direction: column;
-      overflow: scroll;
+      overflow-y: auto;
     }
   
     button {
