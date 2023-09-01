@@ -10,8 +10,7 @@ const Category = () => {
     const [products, setProducts] = useState(categoriesMap[category]);
 
     useEffect(() => {
-        console.log(categoriesMap);
-        console.log(categoriesMap[category]);
+
         setProducts(categoriesMap[category])
     }, [category, categoriesMap])
 
